@@ -1,6 +1,6 @@
 # -*- coding = utf-8 -*-
 import socket
-
+import os
 operation={1:'申请许可证',2:'使用许可证',3:'退出程序',4:'保持在线'}
 lisenceType = {1:'家庭版',2:'公司版',3:'个人版'}
 addr = ("localhost", 8887)
@@ -27,6 +27,10 @@ def applyForALicense(client,addr):
     data, addr = client.recvfrom(1024)
     print(data.decode('utf-8'))
     return
+
+
+        
+
 def send_data(client,addr,data):
     client.sendto(data.encode('utf-8'), addr) 
 
